@@ -1,0 +1,14 @@
+{
+  "name": "testnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "chandu",
+  "license": "ISC",
+  "dependencies": {
+    "pkginfo": "^0.4.1"
+  }
+}
