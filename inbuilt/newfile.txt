@@ -1,0 +1,5 @@
+The new code text file 
+node js 
+Deployment
+The deployment of the bot is done by deploying the bot to heroku.
+The bot is deployed on heroku
