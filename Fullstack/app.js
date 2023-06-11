@@ -8,8 +8,15 @@ dotenv.config();
 let morgan = require('morgan');
 let port = process.env.PORT ||8812
 
+let menu = [
+    {link:'/',name:'Home'},
+    {link:'/category',name:'Category'},
+    {link:'/products',name:'Products'}
+]
+
 app.get('/',function(req,res){
-    res.send('Hi From Express Default Route')
+    //res.send('Hi From Express Default Route')
+    res.render('index',{title:'Home page'})
 })
 
 // static file path 
@@ -21,6 +28,7 @@ app.set('view engine','ejs');
 
 // middle wear
 app.use(morgan('combined',{stream:fs.createWriteStream('./app.log')}))
+
 
 
 

@@ -1,34 +1,37 @@
 let express = require('express');
 const productRouter = require('./productRouter');
 let categoryRouter = express.Router();
-let category= [
+let data= [
     {
         "id":1,
         "category": "Fashion",
-        "thumb":"https://i.ibb.co/56VP0Fn/cloths.jpg"
+        "thumb":"https://fashionmagazine.com/wp-content/uploads/2019/03/2019-03-06-1.jpg"
     },
     {
         "id":2,
         "category":"Electronics",
-        "thumb":"https://i.ibb.co/pw5Wtdx/appliances.jpg"
+        "thumb":"https://static4.arrow.com/-/media/arrow/images/2400-x-1200/active-and-passive.jpg"
     },
     {
         "id":3,
         "category":"Essentials",
-        "thumb":"https://i.ibb.co/0cw34xm/essentials.jpg"
+        "thumb":"https://www.shutterstock.com/image-photo/brown-bottles-essential-oil-fresh-260nw-461827699.jpg"
     },
     {
         "id":4,
         "category": "Footwear",
-        "thumb":"https://i.ibb.co/r3SZq8S/footware.jpg"
-    }
+        "thumb":"https://images.squarespace-cdn.com/content/v1/5ae36e48297114a6b5271db4/1540074213521-ZH98SGHNHAACN3HZY3RZ/2006-08-28+03.05.16+-+Copy.jpg"
+    },
+    
+    
 ]
 
 
 //default router of category
 categoryRouter.route('/')
     .get(function(req,res){
-        res.send(category)
+        //res.send(category)
+        res.render('category',{title:'Category page',data})
     })
 
 
@@ -36,6 +39,8 @@ categoryRouter.route('/')
 categoryRouter.route('/details')
     .get(function(req,res){
         res.send('This is Catgeory Details route')
+       
+        
     })
 
 module.exports = categoryRouter
