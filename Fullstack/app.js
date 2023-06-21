@@ -7,6 +7,7 @@ let dotenv = require('dotenv');
 dotenv.config();
 let morgan = require('morgan');
 let port = process.env.PORT ||8812
+const {dbConnect} = require('./src/controllers/dbcontroller')
 
 let menu = [
     {link:'/',name:'Home'},
@@ -29,14 +30,12 @@ app.set('view engine','ejs');
 // middle wear
 app.use(morgan('combined',{stream:fs.createWriteStream('./app.log')}))
 
-
-
-
 app.use('/category',categoryRouter)
 app.use('/products',productRouter)
 
 //create server
 app.listen(port,function(err){
+    dbConnect();
     if(err) throw err
     console.log(`Server is running on port ${port}`)
 })

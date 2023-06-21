@@ -1,37 +1,16 @@
 let express = require('express');
 const productRouter = require('./productRouter');
 let categoryRouter = express.Router();
-let data= [
-    {
-        "id":1,
-        "category": "Fashion",
-        "thumb":"https://fashionmagazine.com/wp-content/uploads/2019/03/2019-03-06-1.jpg"
-    },
-    {
-        "id":2,
-        "category":"Electronics",
-        "thumb":"https://static4.arrow.com/-/media/arrow/images/2400-x-1200/active-and-passive.jpg"
-    },
-    {
-        "id":3,
-        "category":"Essentials",
-        "thumb":"https://www.shutterstock.com/image-photo/brown-bottles-essential-oil-fresh-260nw-461827699.jpg"
-    },
-    {
-        "id":4,
-        "category": "Footwear",
-        "thumb":"https://images.squarespace-cdn.com/content/v1/5ae36e48297114a6b5271db4/1540074213521-ZH98SGHNHAACN3HZY3RZ/2006-08-28+03.05.16+-+Copy.jpg"
-    },
-    
-    
-]
+const {getData} = require('./dbcontroller')
 
 
 //default router of category
 categoryRouter.route('/')
-    .get(function(req,res){
+    .get(async(req,res)=>{
         //res.send(category)
-        res.render('category',{title:'Category page',data})
+        let query={};
+        let data = await getData('catgeory',query)
+        res.render('catgeory',{title:'Catgeory page',data})
     })
 
 
