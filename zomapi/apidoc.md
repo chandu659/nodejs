@@ -22,21 +22,21 @@
 
 
 > (GET) filter wrt to mealType + cost
-* 
+* completed
 
 > (GET) Sort on basis of price
-* 
+* completed
 
 > (GET) Pagination
-* 
+* completed
 
 
 // Page3
 * (GET) Details of the restaurant
-> 
+> http://localhost:7896/restaurantDetails/7
 
 * (GET) Menu wrt to restaurant
-> 
+> http://localhost:7896/menu/3
 
 // page4
 * (POST) Details of selected menu

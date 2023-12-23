@@ -16,7 +16,6 @@ function dbConnect() {
     });
 }
 
-
 async function getData(colName,query){
     let output;
     try{
@@ -49,9 +48,22 @@ async function getDataSortSkip(colName,query,sort, skip, limit){
     return output
 }
 
+//post data
+async function postData(colName,data){
+    let output;
+    try{
+        output = await db.collection(colName).insert(data)
+    } catch(err){
+        output = {'Error':`Error While fetching from ${colName}`}
+    }
+    return output
+}
+
+
     module.exports = {
         dbConnect,
         getData,  
         getDataSort,
-        getDataSortSkip
+        getDataSortSkip,
+        postData
     }
