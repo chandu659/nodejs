@@ -59,11 +59,39 @@ async function postData(colName,data){
     return output
 }
 
+// update data
+
+async function updateData(colName, condition, data){
+    let output;
+    try {
+        output = await db.collection(colName).update(condition, data)
+    } catch(err){
+        output = {'Error':`Error while updating in ${colName}`}
+    }
+    return output
+}
+
+// delet data 
+async function deleteData(colName,condition){
+    let output;
+    try{
+        output = await db.collection(colName).remove(condition)
+    } catch(err){
+        output = {'Error':`Error While removing data from ${colName}`}
+    }
+    return output
+}
+
+
+
+
 
     module.exports = {
         dbConnect,
         getData,  
         getDataSort,
         getDataSortSkip,
-        postData
+        postData,
+        updateData, 
+        deleteData
     }

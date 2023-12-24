@@ -40,10 +40,10 @@
 
 // page4
 * (POST) Details of selected menu
-> 
+> http://localhost:7896/menuDetails
 
 * (POST) Place Order
-> 
+> http://localhost:7896/placeOrders
 
 // Page5
 * (GET) View all order/wrt to email
