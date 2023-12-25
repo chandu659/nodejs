@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
 
-    "start": "npm apiWithoutUi.js",
+    "start": "node apiWithoutUi.js",
     "dev": "nodemon apiWithoutUi.js",
-    "ui": "node apiWithUi.js",
+    "ui": "nodemon apiWithUi.js",
     "test":"mocha --timeout 10000"
   },
   "keywords": [],
